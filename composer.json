@@ -1,0 +1,62 @@
+{
+    "name": "a-h-abid/laravalerors",
+    "description": "Laravel API Validator Error Response with Validation Rule name.",
+    "keywords": [
+        "laravel",
+        "validation",
+        "api",
+        "errors",
+        "rule"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ahmedul Haque Abid",
+            "email": "a_h_abid@hotmail.com",
+            "homepage": "https://a-h-abid.github.io",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "illuminate/validation": ">=10.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.13"
+    },
+    "autoload": {
+        "psr-4": {
+            "AHAbid\\Laravalerors\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\AHAbid\\Laravalerors\\": "tests/",
+            "Workbench\\App\\": "workbench/app/",
+            "Workbench\\Database\\Factories\\": "workbench/database/factories/",
+            "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "post-autoload-dump": [
+            "@clear",
+            "@prepare"
+        ],
+        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+        "prepare": "@php vendor/bin/testbench package:discover --ansi",
+        "build": "@php vendor/bin/testbench workbench:build --ansi",
+        "serve": [
+            "@build",
+            "@php vendor/bin/testbench serve"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AHAbid\\Laravalerors\\LaravalerorsServiceProvider"
+            ]
+        }
+    }
+}
